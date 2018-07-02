@@ -1,0 +1,16 @@
+{
+  "name": "binary-ring-buffer",
+  "version": "0.8.0",
+  "description": "A NodeJS ring buffer built for handling binary data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node transcribe.js"
+  },
+  "author": "CISL",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://code.empac.rpi.edu/CISL/libraries/binary-ring-buffer"
+  },
+  "private": true
+}
