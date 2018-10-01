@@ -1,8 +1,13 @@
 /*
-A node.js implementation of a ring buffer for binary data (using the builtin Buffer)
-Not thread safe/asynchronous
+A node.js implementation of a ring buffer for binary data using the builtin Buffer class as opposed
+to the common use of Array. A ring buffer is a data structure that wraps on itself such that if you
+write data past the "end" of the structure, it will start writing to the start of it.
 */
 class BinaryRingBuffer {
+  /**
+   * Create a new BinaryRingBuffer
+   * @param {number} capacity Capacity of the memory the buffer can hold in bytes
+   */
   constructor(capacity) {
     this.capacity = capacity;
     this.buffer = Buffer.alloc(capacity);
@@ -15,24 +20,37 @@ class BinaryRingBuffer {
     this.tail = 0;
   }
 
+  /**
+   * Get the length of the underlying buffer structure.
+   * @return {number} Length of the buffer
+   */
   get length() {
     return this.buffer.length;
   }
 
-  // returns the next index in the ring
-  // handles wrapping
+  /**
+   * Given a pointer, increment it, wrap it in the buffer if necessary and return it
+   * @param {number} ptr A pointer value in the buffer
+   * @return {number} New pointer position
+   */
   incrementPtr(ptr) {
     return (ptr + 1) % this.capacity;
   }
 
-  // For debugging
+  /**
+   * Get the string representation of the underlying buffer. Useful for debugging.
+   * @return {string} The underlying buffer as a string
+   */
   toString() {
     return this.buffer.toString();
   }
 
-  // Reads the first n bytes of the buffer starting at the head
-  // If n goes past the tail, only return data up to the tail
-  // O(n) on the given number n
+  /**
+   * Reads the first n bytes of the buffer starting at the head. If n goes past
+   * the tail, only return the data up to the tail.
+   * @param {number} n Number of bytes to read from buffer
+   * @return {Buffer} New Buffer of the read n bytes
+   */
   read(n) {
     // check for empty buffer
     if (this.numItems === 0) {
@@ -66,13 +84,17 @@ class BinaryRingBuffer {
       if (this.head === this.tail) {
         return readBuff;
       }
-    } 
+    }
 
     return readBuff;
   }
 
-  // Writes the data to the buffer. Will override old data if capacity is hit
-  // O(n) on the length of the data
+  /**
+   * Writes data to the buffer starting at the tail. It will override old data
+   * if it is at capacity.
+   * @param {*} data Data to write to the buffer
+   * @return {void}
+   */
   write(data) {
     for (let i = 0; i < data.length; ++i) {
       // write the data to the tail
