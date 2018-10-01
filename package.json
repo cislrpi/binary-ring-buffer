@@ -7,11 +7,21 @@
     "start": "node transcribe.js",
     "test": "mocha"
   },
-  "author": "CISL",
+  "contributors": [
+    {
+      "name": "Brandon Thorne",
+      "email": "thornb@rpi.edu"
+    },
+    {
+      "name": "Matthew Peveler",
+      "email": "matt.peveler@gmail.com",
+      "url": "https://mpeveler.com"
+    }
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://code.empac.rpi.edu/CISL/libraries/binary-ring-buffer"
+    "url": "https://internal.cisl.rpi.edu/code/libraries/binary-ring-buffer"
   },
   "private": true,
   "devDependencies": {
