@@ -12,5 +12,11 @@
     "type": "git",
     "url": "https://code.empac.rpi.edu/CISL/libraries/binary-ring-buffer"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
