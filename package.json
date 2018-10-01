@@ -1,10 +1,11 @@
 {
   "name": "binary-ring-buffer",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "A NodeJS ring buffer built for handling binary data",
   "main": "index.js",
   "scripts": {
-    "start": "node transcribe.js"
+    "start": "node transcribe.js",
+    "test": "mocha"
   },
   "author": "CISL",
   "license": "ISC",
@@ -15,8 +16,5 @@
   "private": true,
   "devDependencies": {
     "mocha": "^5.2.0"
-  },
-  "scripts": {
-    "test": "mocha"
   }
 }
