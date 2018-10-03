@@ -4,7 +4,6 @@
   "description": "A NodeJS ring buffer built for handling binary data",
   "main": "index.js",
   "scripts": {
-    "start": "node transcribe.js",
     "test": "mocha"
   },
   "contributors": [
@@ -14,16 +13,17 @@
     },
     {
       "name": "Matthew Peveler",
-      "email": "matt.peveler@gmail.com",
-      "url": "https://mpeveler.com"
+      "email": "matt.peveler@gmail.com"
     }
   ],
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://internal.cisl.rpi.edu/code/libraries/binary-ring-buffer"
   },
-  "private": true,
+  "publishConfig": {
+    "registry": "https://internal.cisl.rpi.edu/npm/"
+  },
   "devDependencies": {
     "mocha": "^5.2.0"
   }
