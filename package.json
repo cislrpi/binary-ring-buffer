@@ -1,5 +1,5 @@
 {
-  "name": "binary-ring-buffer",
+  "name": "@cisl/binary-ring-buffer",
   "version": "1.0.0",
   "description": "A NodeJS ring buffer built for handling binary data",
   "main": "index.js",
