@@ -113,4 +113,4 @@ class BinaryRingBuffer {
   }
 }
 
-module.exports = BinaryRingBuffer;
+export = BinaryRingBuffer;
