@@ -1,13 +1,15 @@
 {
   "name": "@cisl/binary-ring-buffer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A NodeJS ring buffer built for handling binary data",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src/*",
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "mocha"
+    "test": "mocha",
+    "prepublishOnly": "echo \"Do not run publish directly, run tsc-publish\" && exit 1",
+    "tsc-publish": "tsc-publish"
   },
   "contributors": [
     {
@@ -35,6 +37,7 @@
     "@typescript-eslint/parser": "^2.3.2"
   },
   "dependencies": {
-    "@types/node": "^12.7.8"
+    "@types/node": "^12.7.8",
+    "tsc-publish": "^0.3.0"
   }
 }
