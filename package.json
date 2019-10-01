@@ -4,6 +4,9 @@
   "description": "A NodeJS ring buffer built for handling binary data",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/*",
+    "build": "tsc",
+    "watch": "tsc -w",
     "test": "mocha"
   },
   "contributors": [
@@ -25,6 +28,13 @@
     "registry": "https://internal.cisl.rpi.edu/npm/"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "eslint": "^6.5.1",
+    "mocha": "^5.2.0",
+    "typescript": "^3.6.3",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.8"
   }
 }

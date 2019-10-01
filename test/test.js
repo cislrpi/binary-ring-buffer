@@ -1,5 +1,5 @@
 const assert = require('assert');
-const BinaryRingBuffer = require('./../index.js');
+const BinaryRingBuffer = require('./../dist/index.js');
 
 // Test 1 - normal read
 describe('BinaryRingBuffer', () => {
@@ -46,7 +46,7 @@ describe('BinaryRingBuffer', () => {
     // read from buffer and move head forward
     let test5 = rb3.read(4);
 
-    // write starting at tail (write last byte, override 00): <Buffer 07, 01, 02, 03, 04, 05, 06, 07, 08, 07> 
+    // write starting at tail (write last byte, override 00): <Buffer 07, 01, 02, 03, 04, 05, 06, 07, 08, 07>
     let buf4 = Buffer.from([7, 7]);
     rb3.write(buf4);
 
