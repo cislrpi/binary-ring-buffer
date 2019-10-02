@@ -116,6 +116,24 @@ class BinaryRingBuffer {
       }
     }
   }
+
+  /**
+   * Grab specific slice of the circular buffer
+   * @param start where to start slice
+   * @param end where to end slice
+   */
+  slice(start: number, end: number): Buffer {
+    start %= this.capacity;
+    end %= this.capacity;
+    if (end > start) {
+      return this.buffer.slice(start, end);
+    }
+    else {
+      const buf1 = this.buffer.slice(start);
+      const buf2 = this.buffer.slice(0, end);
+      return Buffer.concat([buf1, buf2], buf1.length + buf2.length);
+    }
+  }
 }
 
 export = BinaryRingBuffer;
