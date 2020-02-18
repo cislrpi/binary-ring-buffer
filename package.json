@@ -13,16 +13,13 @@
     },
     {
       "name": "Matthew Peveler",
-      "email": "matt.peveler@gmail.com"
+      "email": "pevelm@rpi.edu"
     }
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://internal.cisl.rpi.edu/code/libraries/binary-ring-buffer"
-  },
-  "publishConfig": {
-    "registry": "https://internal.cisl.rpi.edu/npm/"
+    "url": "https://github.com/cislrpi/binary-ring-buffer"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
