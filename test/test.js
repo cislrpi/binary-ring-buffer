@@ -1,5 +1,5 @@
 const assert = require('assert');
-const BinaryRingBuffer = require('./../index.js');
+const BinaryRingBuffer = require('./../dist/index.js');
 
 // Test 1 - normal read
 describe('BinaryRingBuffer', () => {
@@ -44,9 +44,9 @@ describe('BinaryRingBuffer', () => {
     rb3.write(buf3);
 
     // read from buffer and move head forward
-    let test5 = rb3.read(4);
+    rb3.read(4);
 
-    // write starting at tail (write last byte, override 00): <Buffer 07, 01, 02, 03, 04, 05, 06, 07, 08, 07> 
+    // write starting at tail (write last byte, override 00): <Buffer 07, 01, 02, 03, 04, 05, 06, 07, 08, 07>
     let buf4 = Buffer.from([7, 7]);
     rb3.write(buf4);
 
@@ -67,6 +67,19 @@ describe('BinaryRingBuffer', () => {
     // because the 07 bytes are the "oldest" bytes that aren't overriden'
     it('several writes with reads in the middle wrapping around buffer', () => {
       assert(wrappedBuffer.compare(Buffer.from([7, 7, 7, 0, 0, 0, 0, 0, 0, 0])) === 0);
+    });
+  });
+
+  describe('#slice()', () => {
+    let rb4 = new BinaryRingBuffer(10);
+    rb4.write(Buffer.from([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+    it('slice non-wrap', () => {
+      let slice = rb4.slice(0,3);
+      assert(slice.compare(Buffer.from([0, 1, 2])) === 0);
+    });
+    it('slice wraps', () => {
+      let slice = rb4.slice(6, 3);
+      assert(slice.compare(Buffer.from([6, 7, 8, 9, 0, 1, 2])) === 0);
     });
   });
 });
