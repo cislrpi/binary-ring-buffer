@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
     "eslint": "^6.5.1",
-    "mocha": "^5.2.0",
+    "mocha": "^7.1.1",
     "tsc-publish": "^0.3.0",
     "typescript": "^3.6.3"
   },
