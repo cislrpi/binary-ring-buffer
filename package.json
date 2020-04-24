@@ -35,6 +35,12 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@types/node": "^12.7.8"
+    "@types/node": "^10.17.21"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

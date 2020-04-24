@@ -35,7 +35,8 @@ class BinaryRingBuffer {
   }
 
   /**
-   * Given a pointer, increment it, wrap it in the buffer if necessary and return it
+   * Given a pointer value, increment it, wrap it in the buffer if necessary and
+   * return it
    * @param {number} ptr A pointer value in the buffer
    * @return {number} New pointer position
    */
