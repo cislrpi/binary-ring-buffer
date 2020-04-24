@@ -1,6 +1,6 @@
 {
   "name": "@cisl/binary-ring-buffer",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A NodeJS ring buffer built for handling binary data",
   "main": "dist/index.js",
   "scripts": {
